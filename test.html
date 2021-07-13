@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://sprout-sapphire-geese.glitch.me/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hello!</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="./Hello!_files/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    
+  </head>  
+  <body>
+    <h1>
+      Web Share Demo
+    </h1>
+    <button id="shareBtn">
+      Share
+    </button>
+    <script>
+      const shareBtn = document.querySelector('#shareBtn');
+      shareBtn.onclick = async function() {
+        if(navigator.share) {
+          const shareData = {
+            title: 'Web Share Demo',
+            text: 'This is some text I wanted to share',
+            url: 'https://josephkhan.me'
+          };
+          await navigator.share(shareData);
+          console.log('Share Successfull');
+        } else {
+          alert('Web Share not supported');
+        }
+      }
+    </script>
+  
+
+</body></html>
